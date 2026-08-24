@@ -25,6 +25,18 @@ BEGIN
 	RAISE NOTICE 'O número real gerado foi: %', n;
 END $$;
 
+-- 1.3 Faça um programa que gere um valor real no intervalo [20, 30] que representa uma
+-- temperatura em graus Celsius. Faça a conversão para Fahrenheit e exiba.
+
+DO $$
+DECLARE 
+	c NUMERIC (5,2);
+	f NUMERIC (5,2);
+BEGIN 
+	c := random() * (30 - 20 + 1) + 20;
+	f := (c * 9/5) + 32;
+	RAISE NOTICE ' A conversão em fahrenheit do valor real gerado (% celsius) é: %',c,f;
+END $$;
 -----------------------------------------------------------------------------------------------
 -- -- variáveis
 --  DO $$
