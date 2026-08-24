@@ -15,6 +15,15 @@ BEGIN
 RAISE NOTICE 'O número inteiro gerado foi: %',n;
 END $$;
 
+-- 1.2. Faça um programa que gere um valor real e o exiba.
+
+DO $$
+DECLARE
+	n NUMERIC(5,2);
+BEGIN
+	n := random() * (10 - 1 + 1) + 1;
+	RAISE NOTICE 'O número real gerado foi: %', n;
+END $$;
 
 -----------------------------------------------------------------------------------------------
 -- -- variáveis
