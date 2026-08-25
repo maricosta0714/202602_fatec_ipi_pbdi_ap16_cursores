@@ -97,6 +97,25 @@ BEGIN
     RAISE NOTICE 'Preço por m²: R$%, Valor total: R$%', p, v;
 END $$;
 
+--1.7 Escreva um programa que gere um inteiro que representa o ano de nascimento de uma
+--pessoa no intervalo [1980, 2000] e gere um inteiro que representa o ano atual no intervalo
+--[2010, 2020]. O programa deve exibir a idade da pessoa em anos. Desconsidere detalhes
+--envolvendo dias, meses, anos bissextos etc.
+
+DO $$
+DECLARE
+    ano_nascimento INTEGER;
+    ano_atual INTEGER;
+    idade INTEGER;
+BEGIN
+    ano_nascimento := floor(random() * (2000 - 1980 + 1) + 1980)::int;
+    ano_atual := floor(random() * (2020 - 2010 + 1) + 2010)::int;
+
+    idade := ano_atual - ano_nascimento;
+
+    RAISE NOTICE 'Nascido em %, no ano de % essa pessoa tem % anos', ano_nascimento, ano_atual, idade;
+END $$;
+
 -----------------------------------------------------------------------------------------------
 -- -- variáveis
 --  DO $$
