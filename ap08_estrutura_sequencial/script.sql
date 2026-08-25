@@ -37,6 +37,23 @@ BEGIN
 	f := (c * 9/5) + 32;
 	RAISE NOTICE ' A conversão em fahrenheit do valor real gerado (% celsius) é: %',c,f;
 END $$;
+
+--1.4 Faça um programa que gere três valores reais a, b, e c e mostre o valor de delta: aquele
+--que calculamos para chegar às potenciais raízes de uma equação do segundo grau.
+
+DO $$
+DECLARE 
+	a NUMERIC (6,2);
+	b NUMERIC (6,2);
+	c NUMERIC (6,2);
+	d NUMERIC (10,2);
+BEGIN 
+	a := random() * (10 - 1 + 1) + 1;
+	b := random() * (10 - 1 + 1) + 1;
+	c := random() * (10 - 1 + 1) + 1;
+	d := b^2 - 4*a*c;
+	RAISE NOTICE 'Os valores de a, b e c são respectivamente: %, %, %. O valor de delta é igual a: %',a,b,c,d;
+END $$;
 -----------------------------------------------------------------------------------------------
 -- -- variáveis
 --  DO $$
