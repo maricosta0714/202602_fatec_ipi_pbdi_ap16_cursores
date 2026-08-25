@@ -54,6 +54,29 @@ BEGIN
 	d := b^2 - 4*a*c;
 	RAISE NOTICE 'Os valores de a, b e c são respectivamente: %, %, %. O valor de delta é igual a: %',a,b,c,d;
 END $$;
+
+--1.5 Faça um programa que gere um número inteiro e mostre a raiz cúbica de seu antecessor
+--e a raiz quadrada de seu sucessor.
+
+DO $$
+DECLARE 
+	n INTEGER;
+	a INTEGER;
+	s INTEGER;
+	r2 NUMERIC (6,2);
+	r3 NUMERIC (6,2);
+BEGIN 
+	n := floor(random() * (100 - 1 + 1) + 1)::int;
+	a := n - 1;
+	s := n + 1;
+	r2 := |/ s;
+	r3 := ||/ a;
+	RAISE NOTICE 'O número gerado é: %. A raiz cúbica do antecessor é igual a: %. A raiz quadrada do sucessor é igual a: %', n, r3, r2;
+END $$;
+
+
+
+
 -----------------------------------------------------------------------------------------------
 -- -- variáveis
 --  DO $$
