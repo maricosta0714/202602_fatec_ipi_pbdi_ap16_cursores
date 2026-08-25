@@ -74,8 +74,28 @@ BEGIN
 	RAISE NOTICE 'O número gerado é: %. A raiz cúbica do antecessor é igual a: %. A raiz quadrada do sucessor é igual a: %', n, r3, r2;
 END $$;
 
+-- 1.6 Faça um programa que gere medidas reais de um terreno retangular. Gere também um
+-- valor real no intervalo [60, 70] que representa o preço por metro quadrado. O programa deve
+-- exibir o valor total do terreno.
 
+DO $$
+DECLARE
+    l NUMERIC(6,2);
+    c NUMERIC(6,2);
+    p NUMERIC(6,2);
+    a NUMERIC(10,2);
+    v NUMERIC(12,2);
+BEGIN
+    l := random() * (10 - 1) + 1;
+    c := random() * (10 - 1) + 1;
+    p := random() * (70 - 60) + 60;
 
+    a := l * c;
+    v := a * p;
+
+    RAISE NOTICE 'Largura: %, Comprimento: %, Área: % m²', l, c, a;
+    RAISE NOTICE 'Preço por m²: R$%, Valor total: R$%', p, v;
+END $$;
 
 -----------------------------------------------------------------------------------------------
 -- -- variáveis
